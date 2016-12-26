@@ -64,6 +64,15 @@ project(":core") {
     }
 }
 
+//zerolib包需要另外依赖以下内容
+project(":zerolib") {
+    apply plugin: 'com.android.library'
+    dependencies {
+        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+        compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+    }
+}
+
 tasks.eclipse.doLast {
     delete ".project"
 }
